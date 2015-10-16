@@ -97,7 +97,7 @@ class LanguageProvider
     /**
      * Returns all languages except the one passed by parameter.
      *
-     * @param  Waavi\Translation\Models\StaticLanguage $language
+     * @param  Waavi\Translation\Models\Language $language
      * @return array
      */
     public function findAllExcept($language)

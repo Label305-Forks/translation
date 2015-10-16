@@ -130,10 +130,7 @@ class LanguageEntryProvider
                 ->first();
 
             // If the entry already exists, we update the text:
-            if ($entry) {
-                $entry->updateText($text, $isDefault);
-            } // The entry doesn't exist:
-            else {
+            if ($entry == null) {
                 $entry = $this->createModel();
                 $entry->namespace = $namespace;
                 $entry->group = $group;
@@ -152,7 +149,7 @@ class LanguageEntryProvider
     public function createModel()
     {
         $class = '\\' . ltrim($this->model, '\\');
-
+        
         return new $class;
     }
 

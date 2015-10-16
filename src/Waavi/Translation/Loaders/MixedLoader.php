@@ -46,7 +46,9 @@ class MixedLoader extends Loader implements LoaderInterface
     {
         $namespace = $namespace ?: '*';
 
-        return array_merge($this->databaseLoader->loadRawLocale($locale, $group, $namespace),
-            $this->fileLoader->loadRawLocale($locale, $group, $namespace));
+        return array_merge(
+            $this->fileLoader->loadRawLocale($locale, $group, $namespace),
+            $this->databaseLoader->loadRawLocale($locale, $group, $namespace)
+            );
     }
 }

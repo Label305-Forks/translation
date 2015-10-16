@@ -12,12 +12,6 @@ class StaticLanguage extends WaaviModel
     protected $table = 'static_languages';
 
     /**
-     *  Allow for languages soft delete.
-     * @var boolean
-     */
-    protected $softDelete = true;
-
-    /**
      *  List of variables that cannot be mass assigned
      * @var array
      */
@@ -37,7 +31,7 @@ class StaticLanguage extends WaaviModel
      */
     public function entries()
     {
-        return $this->hasMany(StaticLanguageEntry::class);
+        return $this->hasMany(StaticLanguageEntry::class, 'language_id');
     }
 
     /**

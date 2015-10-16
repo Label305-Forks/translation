@@ -25,7 +25,7 @@ class DatabaseLoader extends Loader implements LoaderInterface
             $entries = $language->entries()->where('group', '=', $group)->where('namespace', '=', $namespace)->get();
             if ($entries) {
                 foreach ($entries as $entry) {
-                    array_set($langArray, $entry->item, $entry->text);
+                    $langArray[$entry->item] = $entry->text;
                 }
             }
         }

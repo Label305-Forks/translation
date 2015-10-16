@@ -43,7 +43,7 @@ class StaticLanguageEntry extends WaaviModel
      */
     public function language()
     {
-        return $this->belongsTo(StaticLanguage::class);
+        return $this->belongsTo(StaticLanguage::class, 'language_id');
     }
 
     /**
@@ -103,7 +103,7 @@ class StaticLanguageEntry extends WaaviModel
      *  Returns a list of entries that contain a translation for this item in the given language.
      *
      * @param Waavi\Translation\Models\StaticLanguage
-     * @return Waavi\Translation\Models\StaticLanguageEntry
+     * @return Waavi\Translation\Models\LanguageEntry
      */
     public function getSuggestedTranslations($language)
     {
