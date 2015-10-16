@@ -103,7 +103,7 @@ class StaticLanguageEntry extends WaaviModel
      *  Returns a list of entries that contain a translation for this item in the given language.
      *
      * @param Waavi\Translation\Models\StaticLanguage
-     * @return Waavi\Translation\Models\LanguageEntry
+     * @return Waavi\Translation\Models\StaticLanguageEntry
      */
     public function getSuggestedTranslations($language)
     {
