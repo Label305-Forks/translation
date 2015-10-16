@@ -41,7 +41,7 @@ class TranslationServiceProvider extends LaravelTranslationServiceProvider
         $this->registerLoader();
         $this->registerTranslationFileLoader();
 
-        $this->commands('translation.load');
+        $this->commands('translator.load');
 
         $this->app['translator'] = $this->app->share(function ($app) {
             $loader = $app['translation.loader'];
