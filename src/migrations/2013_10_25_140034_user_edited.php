@@ -12,7 +12,7 @@ class UserEdited extends Migration
      */
     public function up()
     {
-        Schema::table('language_entries', function ($table) {
+        Schema::table('static_language_entries', function ($table) {
             $table->boolean('overwrite')->after('unstable')->default(1);
         });
     }

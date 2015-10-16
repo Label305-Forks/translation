@@ -41,7 +41,7 @@ return array(
 
     /*
     |--------------------------------------------------------------------------
-    | Language
+    | StaticLanguage
     |--------------------------------------------------------------------------
     |
     | Configuration specific to the language management component. You may extend

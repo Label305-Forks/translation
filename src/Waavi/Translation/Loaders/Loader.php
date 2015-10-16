@@ -16,14 +16,14 @@ class Loader implements LoaderInterface
     protected $app;
 
     /**
-     * The language provider, used to access the Language model dynamically.
+     * The language provider, used to access the StaticLanguage model dynamically.
      *
      * @var \Waavi\Translation\Providers\LanguageProvider
      */
     protected $languageProvider;
 
     /**
-     * The language entry provider, used to access the LanguageEntry model dynamically.
+     * The language entry provider, used to access the StaticLanguageEntry model dynamically.
      *
      * @var \Waavi\Translation\Providers\LanguageEntryProvider
      */

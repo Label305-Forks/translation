@@ -7,7 +7,7 @@ class LanguageEntryProvider
      *    The Eloquent language entry model.
      * @var string
      */
-    protected $model = 'Waavi\Translation\Models\LanguageEntry';
+    protected $model = 'Waavi\Translation\Models\StaticLanguageEntry';
 
     /**
      * Create a new Eloquent LangEntry provider.
@@ -65,9 +65,9 @@ class LanguageEntryProvider
 
     /**
      *    Returns a language entry that is untranslated in the specified language.
-     * @param Waavi\Translation\Models\Language $reference
-     * @param Waavi\Translation\Models\Language $target
-     * @return Waavi\Translation\Models\LanguageEntry
+     * @param Waavi\Translation\Models\StaticLanguage $reference
+     * @param Waavi\Translation\Models\StaticLanguage $target
+     * @return Waavi\Translation\Models\StaticLanguageEntry
      */
     public function findUntranslated($reference, $target)
     {
@@ -104,11 +104,11 @@ class LanguageEntryProvider
 
     /**
      *    Loads messages into the database
-     * @param array    $lines
-     * @param Language $language
-     * @param string   $group
-     * @param string   $namespace
-     * @param boolean  $isDefault
+     * @param array          $lines
+     * @param StaticLanguage $language
+     * @param string         $group
+     * @param string         $namespace
+     * @param boolean        $isDefault
      * @return void
      */
     public function loadArray(array $lines, $language, $group, $namespace = null, $isDefault = false)

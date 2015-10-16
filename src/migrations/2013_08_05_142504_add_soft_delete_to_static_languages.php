@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class AddSoftDeleteToLanguages extends Migration
+class AddSoftDeleteToStaticLanguages extends Migration
 {
 
     /**
@@ -12,7 +12,7 @@ class AddSoftDeleteToLanguages extends Migration
      */
     public function up()
     {
-        Schema::table('languages', function ($table) {
+        Schema::table('static_languages', function ($table) {
             $table->softDeletes();
         });
     }

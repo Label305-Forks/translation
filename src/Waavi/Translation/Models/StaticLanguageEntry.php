@@ -2,14 +2,14 @@
 
 use Waavi\Model\WaaviModel;
 
-class LanguageEntry extends WaaviModel
+class StaticLanguageEntry extends WaaviModel
 {
 
     /**
      *  Table name in the database.
      * @var string
      */
-    protected $table = 'language_entries';
+    protected $table = 'static_language_entries';
 
     /**
      *  List of variables that cannot be mass assigned
@@ -23,9 +23,9 @@ class LanguageEntry extends WaaviModel
      */
     public $rules = array(
         'language_id' => 'required',
-        // Language FK
+        // StaticLanguage FK
         'namespace' => '',
-        // Language Entry namespace. Default is *
+        // StaticLanguage Entry namespace. Default is *
         'group' => 'required',
         // Entry group, references the name of the file the translation was originally stored in.
         'item' => 'required',
@@ -43,13 +43,13 @@ class LanguageEntry extends WaaviModel
      */
     public function language()
     {
-        return $this->belongsTo('Waavi\Translation\Models\Language');
+        return $this->belongsTo(StaticLanguage::class);
     }
 
     /**
      *  Return the language entry in the default language that corresponds to this entry.
-     * @param Waavi\Translation\Models\Language $defaultLanguage
-     * @return Waavi\Translation\Models\LanguageEntry
+     * @param Waavi\Translation\Models\StaticLanguage $defaultLanguage
+     * @return Waavi\Translation\Models\StaticLanguageEntry
      */
     public function original($defaultLanguage)
     {
@@ -91,7 +91,7 @@ class LanguageEntry extends WaaviModel
     public function flagSiblingsUnstable()
     {
         if ($this->id) {
-            LanguageEntry::where('namespace', '=', $this->namespace)
+            StaticLanguageEntry::where('namespace', '=', $this->namespace)
                 ->where('group', '=', $this->group)
                 ->where('item', '=', $this->item)
                 ->where('language_id', '!=', $this->language_id)
@@ -102,7 +102,7 @@ class LanguageEntry extends WaaviModel
     /**
      *  Returns a list of entries that contain a translation for this item in the given language.
      *
-     * @param Waavi\Translation\Models\Language
+     * @param Waavi\Translation\Models\StaticLanguage
      * @return Waavi\Translation\Models\LanguageEntry
      */
     public function getSuggestedTranslations($language)

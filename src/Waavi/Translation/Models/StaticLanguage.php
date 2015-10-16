@@ -2,14 +2,14 @@
 
 use Waavi\Model\WaaviModel;
 
-class Language extends WaaviModel
+class StaticLanguage extends WaaviModel
 {
 
     /**
      *  Table name in the database.
      * @var string
      */
-    protected $table = 'languages';
+    protected $table = 'static_languages';
 
     /**
      *  Allow for languages soft delete.
@@ -37,7 +37,7 @@ class Language extends WaaviModel
      */
     public function entries()
     {
-        return $this->hasMany('Waavi\Translation\Models\LanguageEntry');
+        return $this->hasMany(StaticLanguageEntry::class);
     }
 
     /**

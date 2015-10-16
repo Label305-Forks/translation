@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLanguagesTable extends Migration
+class CreateStaticLanguagesTable extends Migration
 {
 
     /**
@@ -12,7 +12,7 @@ class CreateLanguagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('languages', function ($table) {
+        Schema::create('static_languages', function ($table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('locale', 6)->unique();
@@ -28,7 +28,7 @@ class CreateLanguagesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('languages');
+        Schema::drop('static_languages');
     }
 
 }

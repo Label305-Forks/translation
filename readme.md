@@ -131,13 +131,13 @@ Entries in the cache will be prefixed with 'waavi|translation|'
 
 ## The models
 
-If you need to extend either the Language Model or the LanguageEntry model, you will need to extend both of them since they reference eachother. Once you've created your own models, remember to update the config file.
+If you need to extend either the StaticLanguage Model or the StaticLanguageEntry model, you will need to extend both of them since they reference eachother. Once you've created your own models, remember to update the config file.
 
-For example, should you define your models as Language and LanguageEntry in /app/models you will have to edit the config file so its contents are:
+For example, should you define your models as StaticLanguage and StaticLanguageEntry in /app/models you will have to edit the config file so its contents are:
 
 	/*
 	|--------------------------------------------------------------------------
-	| Language
+	| StaticLanguage
 	|--------------------------------------------------------------------------
 	|
 	| Configuration specific to the language management component. You may extend
@@ -145,9 +145,9 @@ For example, should you define your models as Language and LanguageEntry in /app
 	|
 	*/
 	'language'				=>	array(
-		'model' 	=>	'Language',
+		'model' 	=>	'StaticLanguage',
 	),
 
 	'language_entry'	=>	array(
-		'model' 	=>	'LanguageEntry',
+		'model' 	=>	'StaticLanguageEntry',
 	),

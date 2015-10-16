@@ -7,10 +7,10 @@ class LanguageProvider
      *    The Eloquent language model.
      * @var string
      */
-    protected $model = 'Waavi\Translation\Models\Language';
+    protected $model = 'Waavi\Translation\Models\StaticLanguage';
 
     /**
-     * Create a new Eloquent Language provider.
+     * Create a new Eloquent StaticLanguage provider.
      *
      * @param  string $model
      * @return void
